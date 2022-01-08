@@ -99,3 +99,111 @@ console.log(`My name is ${myNumber} and my number is ${myName}`);
 // }
 
 // divBy5(512, 4096);
+
+// Multiples of 6
+// function multipleOf6(minNumber, maxNumber) {
+//     if(minNumber<maxNumber){
+//         let int = minNumber;
+//         while(int<=maxNumber) {
+//             if(int%6===0) {
+//                 console.log(int);
+//                 int++;
+//             } else {
+//                 int++;
+//             }
+//         }
+//     }else {
+//         console.log("first number must be less than the second number to run this function!")
+//     }
+// }
+// // multipleOf6(6, 60000);
+// multipleOf6(6, 6000);
+
+// Counting the Dojo Way
+// function countTheDojoWay() {
+//     for(let i = 1; i<=100; i++) {
+//         if(i%5===0) {
+//             if(i%10===0) {
+//                 console.log("Coding Dojo");
+//             } else {
+//                 console.log("Coding")
+//             }
+//         } else {
+//             console.log(`${i}`);
+//         }
+//     }
+// }
+// countTheDojoWay();
+
+// What do you know?
+// function logParameter(parameter) {
+//     console.log(parameter);
+// }
+// logParameter("incoming");
+
+// Whoa, That Sucker's Huge...
+// const oddAdd = (minNumber, maxNumber) => {
+//     let sum = 0;
+//     if(minNumber<maxNumber) {
+//         for(let i = minNumber; i<=maxNumber; i++) {
+//             if(i%2===0) {
+//                 sum=sum+i;
+//             }
+//         }
+//         console.log(sum);
+//     }
+// }
+// oddAdd(-300000, 300000);
+
+// Countdown by fours
+// const countDownByFours = () => {
+//     let i = 2016;
+//     while(i>0) {
+//         console.log(i);
+//         i=i-4;
+//     }
+// }
+// countDownByFours();
+
+// Flexible Countdown
+// const flexCountdown = (lowNum, highNum, multiple) => {
+    
+//     if(lowNum<highNum) {
+//         for(let i = highNum; i>=lowNum; i--) {
+//             if(i%multiple===0) {
+//                 console.log(i);
+//             }
+//         }
+//     } else {
+//         console.log("Enter values in order of lower number, higher number, multiple")
+//     }
+// }
+
+// flexCountdown(2,9,3);
+// flexCountdown(20, 987, 4);
+// flexCountdown(2, 50, 2);
+
+// The Final Countdown
+// print multiples of 1 starting at 2 ending at 3 and skipping 4
+const finalCountdown = (param1, param2, param3, param4) => {
+    if(param1<=param3 && param2<param3) {
+        let counter = param2;
+        while(counter<=param3) {
+            if(counter!==param4) {
+                if(counter%param1===0) {
+                    console.log(counter);
+                    counter++
+                } else {
+                    counter++;
+                }
+            } else {
+                counter++;
+            }
+        }
+    } else {
+        console.log("First and Second Parameters must be less than the 3rd parameter.");
+    }
+}
+
+// finalCountdown(3,5,17,9);
+finalCountdown(12,10,270,12);
