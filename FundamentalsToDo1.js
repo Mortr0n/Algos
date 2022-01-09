@@ -206,4 +206,4 @@ const finalCountdown = (param1, param2, param3, param4) => {
 }
 
 // finalCountdown(3,5,17,9);
-finalCountdown(12,10,270,12);
+finalCountdown(12,10,270,24);
