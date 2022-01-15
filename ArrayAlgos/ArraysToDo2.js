@@ -14,9 +14,53 @@
 
 // Rotate
 // this works, but I should really fix the negative shift one to make more sense
+// const rotateArr = (arr, shiftBy) => {
+//     if(shiftBy<0){        
+//         for(let j = 0; j>shiftBy; j--) {
+//             let temp = arr[0];
+//             console.log(temp);
+//             for(let l = 0; l<arr.length; l++) {
+//                 // must pay attention to the direction here!
+//                 arr[l] = arr[l+1];
+//             }
+//             arr[arr.length-1]=temp;
+//             console.log(arr);
+//         }
+//     } else {
+//         console.log("Positive")
+//         let temp = 0;
+//         for( let k = 0; k<shiftBy; k++)  {
+//             temp = arr[arr.length-1];
+//             for(let i = arr.length-1; i>0; i--) {
+//                 // must pay attention to the direction here!
+//                 arr[i] = arr[i-1]
+//                 console.log(arr);
+//             }
+//             arr[0] = temp;
+//             console.log(arr);
+//         }
+//     }
+//     return(arr);
+// }
+// let rotate = rotateArr([1,2,3,4,5,6,7,8,9,0], 3);
+// let leftRotate = rotateArr([1,2,3,4,5,6,7,8,9,0], -2);
+// console.log(`First Rotate ${rotate}`);
+// console.log(`Second Rotate ${leftRotate}`);
+
+// Rotate V2
 const rotateArr = (arr, shiftBy) => {
+    // by getting the remainder of the shiftBy divided by the length of the 
+    // array you will get the actual number of spaces to move.  No reason to do 
+    // multiple full spins when all you want is the final result.
+    var rotationsNeeded;
+    if(shiftBy > 0) {
+        rotationsNeeded = shiftBy % arr.length;
+    } else {
+        // Math.abs just gives us the absolute value of the negative number
+        rotationsNeeded = Math.abs(shiftBy) % arr.length;
+    }
     if(shiftBy<0){        
-        for(let j = 0; j>shiftBy; j--) {
+        for(let j = 0; j<rotationsNeeded; j++) {
             let temp = arr[0];
             console.log(temp);
             for(let l = 0; l<arr.length; l++) {
@@ -43,9 +87,10 @@ const rotateArr = (arr, shiftBy) => {
     return(arr);
 }
 let rotate = rotateArr([1,2,3,4,5,6,7,8,9,0], 3);
-let leftRotate = rotateArr([1,2,3,4,5,6,7,8,9,0], -2);
+let leftRotate = rotateArr([1,2,3,4,5,6,7,8,9,0], -245645490);
 console.log(`First Rotate ${rotate}`);
 console.log(`Second Rotate ${leftRotate}`);
+
 
 // Filter Range
 // const filterRange = (arr, min, max) => {
