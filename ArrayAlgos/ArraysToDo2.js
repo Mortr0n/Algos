@@ -14,32 +14,38 @@
 
 // Rotate
 // this works, but I should really fix the negative shift one to make more sense
-// const rotateArr = (arr, shiftBy) => {
-//     if(shiftBy>0){
-//         for(let shift = shiftBy; shift<0; shift++) {
-//             let temp = arr[0];
-//             for(let i = arr.length-1; i >= 1; i--) {
-//                 arr[arr.length-1-i] = arr[arr.length-i];
-//                 arr[arr.length-i] = temp;
-//                 console.log(arr);
-//             }
-//         }
-//     }else {
-//         let temp = 0;
-//         for( let shift = shiftBy; shift>0; shift--)  {
-//             temp = arr[arr.length-1];
-//             console.log(arr[arr.length-1]);
-//             for(let i = arr.length-1; i>=0; i--) {
-//                 arr[i] = arr[i-1]
-//                 console.log(arr);
-//             }
-//             arr[0] = temp;
-//             console.log(arr);
-//         }
-//     }
-// }
-// let rotate = rotateArr([1,2,3,4,5,6,7,8,9,0], 5);
-// let leftRotate = rotateArr([1,2,3,4,5,6,7,8,9,0], 2);
+const rotateArr = (arr, shiftBy) => {
+    if(shiftBy<0){        
+        for(let j = 0; j>shiftBy; j--) {
+            let temp = arr[0];
+            console.log(temp);
+            for(let l = 0; l<arr.length; l++) {
+                // must pay attention to the direction here!
+                arr[l] = arr[l+1];
+            }
+            arr[arr.length-1]=temp;
+            console.log(arr);
+        }
+    } else {
+        console.log("Positive")
+        let temp = 0;
+        for( let k = 0; k<shiftBy; k++)  {
+            temp = arr[arr.length-1];
+            for(let i = arr.length-1; i>0; i--) {
+                // must pay attention to the direction here!
+                arr[i] = arr[i-1]
+                console.log(arr);
+            }
+            arr[0] = temp;
+            console.log(arr);
+        }
+    }
+    return(arr);
+}
+let rotate = rotateArr([1,2,3,4,5,6,7,8,9,0], 3);
+let leftRotate = rotateArr([1,2,3,4,5,6,7,8,9,0], -2);
+console.log(`First Rotate ${rotate}`);
+console.log(`Second Rotate ${leftRotate}`);
 
 // Filter Range
 // const filterRange = (arr, min, max) => {
@@ -67,14 +73,14 @@
 // console.log(range);
 
 // Concat
-const myConcat = (arr1, arr2) => {
-    let newArr = [];
-    for(let i = 0; i<arr1.length; i++) {
-        newArr.push(arr1[i]);
-    }
-    for(let j = 0; j<arr2.length; j++) {
-        newArr.push(arr2[j]);
-    }
-    return newArr;
-}
-console.log(myConcat([1,2,3,4], ["Hi","Hello","Bye","GoodBye"]));
+// const myConcat = (arr1, arr2) => {
+//     let newArr = [];
+//     for(let i = 0; i<arr1.length; i++) {
+//         newArr.push(arr1[i]);
+//     }
+//     for(let j = 0; j<arr2.length; j++) {
+//         newArr.push(arr2[j]);
+//     }
+//     return newArr;
+// }
+// console.log(myConcat([1,2,3,4], ["Hi","Hello","Bye","GoodBye"]));
