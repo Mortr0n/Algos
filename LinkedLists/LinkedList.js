@@ -82,10 +82,11 @@ class LinkedList {
 
     length() {
         let runner = this.head;
-        if(this.head===null) {
-            return false;
-        }
         let count=0;
+        if(this.head===null) {
+            return count;
+        }
+        
         while(runner!==null) {
             count++;
             runner = runner.next
@@ -93,4 +94,17 @@ class LinkedList {
         return count;
     }
 
+    display() {
+        let runner = this.head;
+        let myList = "";
+        if(this.head===null) {
+            myList = "Nothing to show here!";
+            return myList;
+        }
+        do {
+            myList += `Node Value = ${runner.data} /n`;
+            runner = runner.next;
+        } while(runner!==null);
+        return myList;
+    }
 }
